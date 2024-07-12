@@ -1,0 +1,60 @@
+---
+title: 'Pre'
+exampleKey: 'pre'
+layout: '@layouts/ComponentLayout.astro'
+description: ' テキストの空白や改行をそのまま表示'
+thumbnail: '/assets/images/components/thumbnail-default.svg'
+repositoryUrl: 'https://github.com/ubie-oss/ubie-ui/tree/main/src/components/Pre'
+---
+
+import { Pre, Box } from '@ubie/ubie-ui';
+
+## Feature
+
+- コードや、サーバーから取得した空白や改行で整形済みのテキストを表示する場合に利用できます。
+- テキストの空白や改行をそのまま表示します
+- `<pre>`とほぼ同じ機能を持ちます
+    - `<pre>`違いブラウザのデフォルトスタイルの影響をうけません
+
+## Usage
+
+`whiteSpace`propの値によって空白、折り返しの扱いが異なります。
+
+### `pre`
+
+import { PreExample } from './preDocExamples/_Pre'
+
+<PreExample />
+
+- 空白や改行をそのまま表示します
+- テキストがはみ出た場合でも折り返しません
+
+### `pre-wrap`
+
+import { PreWrapExample } from './preDocExamples/_PreWrap'
+
+<PreWrapExample />
+
+- 空白や改行をそのまま表示します
+- テキストがはみ出た場合は折り返します
+
+### `pre-line`（デフォルト）
+
+import { PreLineExample } from './preDocExamples/_PreLine'
+
+<PreLineExample />
+
+- 空白が連続する場合は1つになります
+- 改行をそのまま表示します
+- テキストがはみ出た場合は折り返します
+
+### `break-spaces`
+
+import { BreakSpacesExample } from './preDocExamples/_BreakSpaces'
+
+<BreakSpacesExample />
+
+- 基本は`pre-wrap`と同じです
+- 行末に存在する空白の扱いが異なります
+- 行末に空白がある場合折り返します
+  - 例では1行目の行末にある空白が折り返されて、2行目との間に間隔が生まれています
